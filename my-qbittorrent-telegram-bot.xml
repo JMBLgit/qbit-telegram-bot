@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Container>
+  <Name>my-qbittorrent-telegram-bot</Name>
+  <Repository>JMBLgit/qbittorrent-telegram-bot:latest</Repository>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/JMBLgit/qbit-telegram-bot</Support>
+  <Overview>Bot de Telegram para controlar y monitorizar qBittorrent (añadir, listar, pausar, reanudar, categorías, alertas de caída)</Overview>
+  <Category>Downloaders:Tools</Category>
+  <WebUI></WebUI>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qbittorrent-icon.png</Icon>
+
+  <Config>
+    <Config Name="TELEGRAM_BOT_TOKEN" Target="TELEGRAM_BOT_TOKEN" Default="" Mode="env" Description="Token del bot de Telegram (BotFather)" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="TELEGRAM_ALLOWED_CHATS" Target="TELEGRAM_ALLOWED_CHATS" Default="" Mode="env" Description="ID(s) de chat permitidos, separados por coma" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="QBIT_URL" Target="QBIT_URL" Default="http://192.168.0.43:7282" Mode="env" Description="URL de la WebUI de qBittorrent" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="QBIT_USERNAME" Target="QBIT_USERNAME" Default="admin" Mode="env" Description="Usuario de qBittorrent" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="QBIT_PASSWORD" Target="QBIT_PASSWORD" Default="" Mode="env" Description="Contraseña de qBittorrent" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="DEFAULT_CATEGORIES" Target="DEFAULT_CATEGORIES" Default="docus,peliculas,series,varios,conciertos,musica" Mode="env" Description="Categorías permitidas" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="HEALTH_INTERVAL" Target="HEALTH_INTERVAL" Default="30" Mode="env" Description="Intervalo (segundos) para comprobar salud de qBittorrent" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  </Config>
+</Container>

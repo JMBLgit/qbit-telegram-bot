@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  qbittorrent-telegram-bot:
+    image: JMBLgit/qbittorrent-telegram-bot:latest
+    container_name: qbittorrent-telegram-bot
+    restart: unless-stopped
+    environment:
+      TELEGRAM_BOT_TOKEN: "REEMPLAZA_AQUI"
+      TELEGRAM_ALLOWED_CHATS: "123456789"
+      QBIT_URL: "http://192.168.0.43:7282"
+      QBIT_USERNAME: "admin"
+      QBIT_PASSWORD: "REEMPLAZA_AQUI"
+      DEFAULT_CATEGORIES: "docus,peliculas,series,varios,conciertos,musica"
+      HEALTH_INTERVAL: "30"
